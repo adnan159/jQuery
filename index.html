@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jquery</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="header">
+		<div class="title">
+			<h1>This is Header</h1>			
+		</div>
+		<div>
+			<div class="button">
+				<button data-panelid="panel1" class="panel-button" type="button">btn1</button>			
+			</div>
+			<div class="button">
+				<button data-panelid="panel2" class="panel-button" type="button">btn2</button>
+			</div>
+			<div class="button">
+				<button data-panelid="panel3" class="panel-button" type="button">btn3</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel">
+		<div id="panel1" class="panel1">
+			<div class="panel-heading">
+				#panel1
+			</div>
+			<div class="panel-body">
+				panel content				
+			</div>			
+		</div>
+		<div id="panel2" class="panel2">
+			<div class="panel-heading">
+				#panel2
+			</div>
+			<div class="panel-body">
+				panel content				
+			</div>				
+		</div>
+		<div id="panel3" class="panel3">
+			<div class="panel-heading">
+				#panel3
+			</div>
+			<div class="panel-body">
+				panel content				
+			</div>	
+		</div>		
+	</div>
+
+	<script type="text/javascript" src="jquery/jquery-min.js"></script>
+
+	<script>
+		$(function(){
+			$(".panel-button").on('click',function(){
+				var panelId = $(this).attr('data-panelid');
+				$('#'+panelId).toggle(1000);
+			})
+		})
+
+
+	</script>
+
+</body>
+</html>

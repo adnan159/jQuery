@@ -1,0 +1,26 @@
+.header{
+	height: 200px;
+	width: 100%;
+	background: gray;
+}
+
+.panel1{
+	background: red;
+	display: none;
+}
+.panel2{
+	background: green;
+	display: none;
+}
+.panel3{
+	background: blue;
+	display: none;
+}
+
+ul{
+	font-size: 25px;
+}
+
+.special{
+	color: blue;
+}
