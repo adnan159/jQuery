@@ -21,5 +21,14 @@
 
 	<script type="text/javascript" src="jquery/jquery-min.js"></script>
 
+	<script>
+		$(function(){
+			$('li').on('click',function(){
+				$(this).removeClass('special');
+				$(this).siblings().addClass('special');
+			})
+		})
+	</script>
+
 </body>
 </html>

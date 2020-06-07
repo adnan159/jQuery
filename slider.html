@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+
+	<div class="container">
+        <div class="header">
+            <h1 class="text-muted">jQuery Basic Slider</h1>
+        </div>
+
+        <div id="slider">
+            <ul class="slides">
+                <li class="slide slide1"><img src="images/slider1.jpg"></li>
+                <li class="slide slide2"><img src="images/slider2.jpg"></li>
+                <li class="slide slide3"><img src="images/slider3.jpg"></li>
+                <li class="slide slide4"><img src="images/slider4.jpg"></li>
+                <li class="slide slide5"><img src="images/slider1.jpg"></li>
+            </ul>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="jquery/jquery-min.js"></script>
+
+	<script>
+		$(function(){
+			//configration
+			var width = 720;
+			var animationSpeed = 1000;
+			var pause = 3000;
+			var currentSlide = 1;
+
+			//cache DOM
+			var $slider = $('#slider');
+			var $slideContainer = $slider.find('.slides');
+			var $slides = $slideContainer.find('.slide');
+
+			var interval;
+
+			function startSlider(){
+				interval = setInterval(function(){
+					$slideContainer.animate({'margin-left' : '-='+width}, animationSpeed, function(){
+						currentSlide++;
+						if(currentSlide === $slides.length){
+							currentSlide = 1;
+							$slideContainer.css('margin-left',0);
+						}
+					});
+				},pause);
+			}
+
+			function pauseSlider(){
+				clearInterval(interval);
+			}
+
+			$slider.on('mouseenter', pauseSlider).on('mouseleave',startSlider);
+
+			startSlider();
+				
+		})
+
+
+	</script>
+
+</body>
+</html>
